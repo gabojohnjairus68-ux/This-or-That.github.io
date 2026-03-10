@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>This or That </title>
+    <base target="_blank">
+</head>
+<body>
+    <!-- Floating Hearts -->
+    <div class="hearts" id="hearts"></div>
+
+    <div class="container">
+        <div class="card">
+            <!-- Start Screen -->
+            <div class="start-screen" id="startScreen">
+                <div class="couple-emoji">💑</div>
+                <h1>This or That</h1>
+                <p>Discover how well you know each other!<br>Perfect for couples, best friends, or LDRs 💕</p>
+                <button class="start-btn" onclick="startQuiz()">Start Quiz ✨</button>
+            </div>
+
+            <!-- Quiz Content -->
+            <div class="quiz-content" id="quizContent">
+                <div class="header">
+                    <h1>This or That</h1>
+                    <p class="subtitle">What would they choose? 🤔</p>
+                </div>
+
+                <div class="question-counter" id="counter">Question 1 of 10</div>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+
+                <div class="question-container">
+                    <div class="question" id="questionText">Loading...</div>
+                </div>
+
+                <div style="position: relative;">
+                    <div class="vs-badge">VS</div>
+                    <div class="options" id="optionsContainer">
+                        <div class="option" onclick="selectOption(0)" id="option0">
+                            <span class="option-emoji" id="emoji0">🍕</span>
+                            <span id="text0">Pizza</span>
+                        </div>
+                        <div class="option" onclick="selectOption(1)" id="option1">
+                            <span class="option-emoji" id="emoji1">🍔</span>
+                            <span id="text1">Burger</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="btn btn-secondary" id="prevBtn" onclick="previousQuestion()" disabled>← Back</button>
+                    <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" disabled>Next →</button>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="results" id="resultsScreen">
+                <div class="couple-emoji">🎉</div>
+                <h2>Quiz Complete!</h2>
+                <div class="compatibility-score" id="score">0%</div>
+                <p class="result-message" id="resultMessage">Calculating your compatibility...</p>
+
+                <div class="answers-summary" id="answersSummary"></div>
+
+                <button class="btn btn-primary share-btn" onclick="shareResults()">Share Results 💌</button>
+                <button class="btn btn-secondary" onclick="restartQuiz()" style="margin-left: 10px;">Play Again ↺</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Instructions -->
+    <div class="edit-notice">
+        <strong>📝 To Edit Questions:</strong><br>
+        Open this file in a text editor and modify the <code>questions</code> array in the script section below. Add your own questions, emojis, and options!
+    </div>
+    <script src="Main.js"></script>
+</body>
+</html>
